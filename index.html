@@ -181,6 +181,7 @@ body{
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
+  background-attachment:fixed;
 }
 
 .bg-2::before{
@@ -202,16 +203,8 @@ body{
 @media (max-width:768px){
   .section::before{
     background-attachment:scroll;
+    transform:scale(1.2); /* efek parallax mobile */
   }
-}
-
-.section::before{
-  opacity:0;
-  transition:opacity .6s ease;
-}
-
-.section.show::before{
-  opacity:1;
 }
 
 /* SECTION 1 */
@@ -2091,18 +2084,6 @@ body{
 
 }
 
-/* PERFORMA MOBILE */
-@media (max-width:768px){
-  .section::before{
-    background-attachment:scroll !important;
-    transform:none !important;
-  }
-}
-
-/* Hapus fixed heavy */
-.section::before{
-  will-change: opacity;
-}
 
 </style>
 </head>
