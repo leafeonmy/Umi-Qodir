@@ -181,7 +181,6 @@ body{
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
-  background-attachment:fixed;
 }
 
 .bg-2::before{
@@ -203,8 +202,16 @@ body{
 @media (max-width:768px){
   .section::before{
     background-attachment:scroll;
-    transform:scale(1.2); /* efek parallax mobile */
   }
+}
+
+.section::before{
+  opacity:0;
+  transition:opacity .6s ease;
+}
+
+.section.show::before{
+  opacity:1;
 }
 
 /* SECTION 1 */
@@ -2084,17 +2091,21 @@ body{
 
 }
 
+/* PERFORMA MOBILE */
+@media (max-width:768px){
+  .section::before{
+    background-attachment:scroll !important;
+    transform:none !important;
+  }
+}
+
+/* Hapus fixed heavy */
+.section::before{
+  will-change: opacity;
+}
 
 </style>
 </head>
-
-<body>
-    <!-- teks dekstop tulisan foto kiri -->
-<div class="side-text">
-  <div class="side-title">The Wedding Of</div>
-  <div class="side-names">Umi & Qodir</div>
-  <div class="side-date">20 Mei 2026</div>
-</div>
   <!-- COVER -->
 <div class="cover" id="cover">
   <div class="cover-content">
