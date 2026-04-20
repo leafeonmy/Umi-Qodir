@@ -6,7 +6,7 @@
 <title>Umi Qodir - leafeonmy</title>
 
 <meta property="og:title" content="Umi Qodir - leafeonmy">
-<meta property="og:description" content="Pernikahan Umi & Qodir, Banyumas, 20 Mei 2026">
+<meta property="og:description" content="Pernkahan Umi & Qodir, Banyumas, 20 Mei 2026">
 <meta property="og:image" content="https://www.dropbox.com/scl/fi/h9ly4cxn5lxgznnvkf2ou/inisialUQ.jpeg?rlkey=sgdlsa18cqqf2yj9nd4k7ay65&st=fe6ygmka&dl=1">
 <meta property="og:url" content="https://leafeonmy.github.io/Umi-Qodir/">
 <meta property="og:type" content="website">
@@ -94,9 +94,21 @@
 }
 
 #namaTamu{
-  font-size: 18px;
-  margin-bottom: 30px;
-  font-weight: bold;
+  font-size:18px;
+  margin-bottom:30px;
+  font-weight:bold;
+  animation: tampilCepat 0.5s ease-out forwards;
+}
+
+@keyframes tampilCepat{
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 #DiTempat{
@@ -181,6 +193,7 @@ body{
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
+  background-attachment:fixed;
 }
 
 .bg-2::before{
@@ -202,16 +215,8 @@ body{
 @media (max-width:768px){
   .section::before{
     background-attachment:scroll;
+    transform:scale(1.2); /* efek parallax mobile */
   }
-}
-
-.section::before{
-  opacity:0;
-  transition:opacity .6s ease;
-}
-
-.section.show::before{
-  opacity:1;
 }
 
 /* SECTION 1 */
@@ -2060,13 +2065,14 @@ body{
   border-radius:2px;
 }
 
-
 @media (min-width:768px){
 
   body{
     margin:0;
+    background:#e9e9e9;
   }
 
+  /* seluruh undangan ke kanan */
   .cover,
   .section,
   .hero{
@@ -2076,6 +2082,7 @@ body{
     margin-right:0 !important;
   }
 
+  /* foto di kiri */
   body::before{
     content:"";
     position:fixed;
@@ -2091,21 +2098,11 @@ body{
 
 }
 
-/* PERFORMA MOBILE */
-@media (max-width:768px){
-  .section::before{
-    background-attachment:scroll !important;
-    transform:none !important;
-  }
-}
-
-/* Hapus fixed heavy */
-.section::before{
-  will-change: opacity;
-}
 
 </style>
 </head>
+
+<body>
   <!-- COVER -->
 <div class="cover" id="cover">
   <div class="cover-content">
